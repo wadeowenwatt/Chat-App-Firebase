@@ -8,13 +8,16 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.chatapp.databinding.ActivityMainBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import java.util.concurrent.TimeUnit
 
-
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
 
     private var mAuth: FirebaseAuth? = null
     private var countryCode: String = "+"
@@ -27,17 +30,10 @@ class MainActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-//        countryCode += binding.countryCode.selectedCountryCode.toString()
-//
-//        binding.btnLogin.setOnClickListener {
-//            val formatPhoneNumber =
-//                countryCode + binding.phoneNum.text.toString()
-//            if (TextUtils.isEmpty(binding.phoneNum.text)) {
-//                Toast.makeText(this, "Empty phone number", Toast.LENGTH_SHORT)
-//                    .show()
-//            } else
-//                sendVerificationCode(formatPhoneNumber)
-//        }
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
     }
 
     private fun sendVerificationCode(phone: String) {

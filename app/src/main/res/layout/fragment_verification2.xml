@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Verification1Fragment">
+    tools:context=".Verification2Fragment">
 
     <ImageView
         android:id="@+id/btn_back"
