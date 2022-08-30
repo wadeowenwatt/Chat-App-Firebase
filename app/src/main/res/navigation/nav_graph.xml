@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,20 +10,12 @@
         android:id="@+id/walkthroughFragment"
         android:name="com.example.chatapp.WalkthroughFragment"
         android:label="fragment_walkthrough"
-        tools:layout="@layout/fragment_walkthrough" >
-        <action
-            android:id="@+id/action_walkthroughFragment_to_verification1Fragment"
-            app:destination="@id/verification1Fragment" />
-    </fragment>
+        tools:layout="@layout/fragment_walkthrough" />
     <fragment
         android:id="@+id/verification2Fragment"
         android:name="com.example.chatapp.Verification2Fragment"
         android:label="fragment_verification2"
-        tools:layout="@layout/fragment_verification2" >
-        <action
-            android:id="@+id/action_verification2Fragment_to_userProfileFragment"
-            app:destination="@id/userProfileFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_verification2" />
     <fragment
         android:id="@+id/userProfileFragment"
         android:name="com.example.chatapp.UserProfileFragment"
@@ -32,9 +25,5 @@
         android:id="@+id/verification1Fragment"
         android:name="com.example.chatapp.Verification1Fragment"
         android:label="fragment_verification1"
-        tools:layout="@layout/fragment_verification1" >
-        <action
-            android:id="@+id/action_verification1Fragment_to_verification2Fragment"
-            app:destination="@id/verification2Fragment" />
-    </fragment>
+        tools:layout="@layout/fragment_verification1" />
 </navigation>
