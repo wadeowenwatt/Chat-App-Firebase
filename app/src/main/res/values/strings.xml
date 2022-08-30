@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Chat App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_start_messaging">Start Messaging</string>
+    <string name="btn_terms"><![CDATA[Terms & Privacy Policy]]></string>
+    <string name="btn_continue">Continue</string>
+    <string name="title_guide">Please confirm your country code and enter your phone number</string>
+    <string name="title_enter_phone_number">Enter Your Phone Number</string>
+    <string name="phone_number_text_hint">Phone Number</string>
+    <string name="enter_code_title">Enter Code</string>
+    <string name="title_guide_code">We have sent you an SMS with the code to</string>
+    <string name="btn_resend_code">Resend Code</string>
+    <string name="your_profile">Your Profile</string>
+    <string name="btn_save">Save</string>
+    <string name="first_name_hint">First Name (Required)</string>
+    <string name="last_name_hint">Last Name (Optional)</string>
+</resources>
