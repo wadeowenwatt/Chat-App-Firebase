@@ -21,23 +21,24 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // hide action bar
         supportActionBar?.hide()
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         mAuth = FirebaseAuth.getInstance()
 
-//        countryCode += binding.countryCode.selectedCountryCode.toString()
-//
-//        binding.btnLogin.setOnClickListener {
-//            val formatPhoneNumber =
-//                countryCode + binding.phoneNum.text.toString()
-//            if (TextUtils.isEmpty(binding.phoneNum.text)) {
-//                Toast.makeText(this, "Empty phone number", Toast.LENGTH_SHORT)
-//                    .show()
-//            } else
-//                sendVerificationCode(formatPhoneNumber)
-//        }
+        countryCode += binding.countryCode.selectedCountryCode.toString()
+
+        binding.btnContinue.setOnClickListener {
+            val formatPhoneNumber =
+                countryCode + binding.phoneNum.text.toString()
+            if (TextUtils.isEmpty(binding.phoneNum.text)) {
+                Toast.makeText(this, "Empty phone number", Toast.LENGTH_SHORT)
+                    .show()
+            } else
+                sendVerificationCode(formatPhoneNumber)
+        }
     }
 
     private fun sendVerificationCode(phone: String) {
