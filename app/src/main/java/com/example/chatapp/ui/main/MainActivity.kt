@@ -1,13 +1,11 @@
-package com.example.chatapp
+package com.example.chatapp.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.chatapp.R
 import com.example.chatapp.databinding.ActivityMainBinding
-import com.google.firebase.FirebaseException
-import com.google.firebase.auth.*
-import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
