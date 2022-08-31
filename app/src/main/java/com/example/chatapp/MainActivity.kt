@@ -13,20 +13,21 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
-    private var mAuth: FirebaseAuth? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // hide action bar
         supportActionBar?.hide()
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        mAuth = FirebaseAuth.getInstance()
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
     }
+
 
 }
