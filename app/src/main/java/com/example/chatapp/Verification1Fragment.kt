@@ -37,8 +37,6 @@ class Verification1Fragment : Fragment() {
 
         countryCode += binding.countryCode.selectedCountryCode.toString()
 
-
-
         return binding.root
     }
 
@@ -48,6 +46,7 @@ class Verification1Fragment : Fragment() {
         binding.btnBack.setOnClickListener {
             it.findNavController().popBackStack()
         }
+
         binding.btnContinue.setOnClickListener {
             val formatPhoneNumber =
                 countryCode + binding.phoneNum.text.toString()

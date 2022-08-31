@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // hide action bar
@@ -28,6 +26,4 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
     }
-
-
 }
