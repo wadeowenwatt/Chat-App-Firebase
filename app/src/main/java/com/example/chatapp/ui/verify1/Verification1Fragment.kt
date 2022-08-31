@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.chatapp.databinding.FragmentVerification1Binding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -69,7 +70,9 @@ class Verification1Fragment : Fragment() {
         }
 
         binding.layout2.pinCode.setOnPinEnteredListener {
-            Log.e("1", it.subSequence(0,6).toString())
+            val code = it.subSequence(0, 6).toString()
+            verifyPhoneNumberWithCode(verificationId, code)
+            findNavController().navigate(Verification1FragmentDirections.actionVerification1FragmentToUserProfileFragment())
         }
 
     }
