@@ -9,7 +9,7 @@
     <string name="title_enter_phone_number">Enter Your Phone Number</string>
     <string name="phone_number_text_hint">Phone Number</string>
     <string name="enter_code_title">Enter Code</string>
-    <string name="title_guide_code">We have sent you an SMS with the code to</string>
+    <string name="title_guide_code">We have sent you an SMS with the code to %s</string>
     <string name="btn_resend_code">Resend Code</string>
     <string name="your_profile">Your Profile</string>
     <string name="btn_save">Save</string>

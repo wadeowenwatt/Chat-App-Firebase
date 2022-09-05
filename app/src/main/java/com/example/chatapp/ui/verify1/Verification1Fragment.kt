@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.chatapp.R
 import com.example.chatapp.databinding.FragmentVerification1Binding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -31,6 +32,8 @@ class Verification1Fragment : Fragment() {
     private var forceResendingToken: PhoneAuthProvider.ForceResendingToken? =
         null
     private lateinit var mAuth: FirebaseAuth
+    var formatPhoneNumber: String = ""
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,15 +57,14 @@ class Verification1Fragment : Fragment() {
         }
 
         binding.btnContinue.setOnClickListener {
-            val formatPhoneNumber =
-                countryCode + binding.phoneNum.text.toString()
+            formatPhoneNumber =
+                countryCode + formatPhoneNumber(binding.phoneNum.text.toString())
             if (TextUtils.isEmpty(binding.phoneNum.text)) {
                 Toast.makeText(
                     requireContext(),
                     "Empty phone number",
                     Toast.LENGTH_SHORT
-                )
-                    .show()
+                ).show()
             } else {
                 sendVerificationCode(formatPhoneNumber)
 
@@ -72,7 +74,6 @@ class Verification1Fragment : Fragment() {
         binding.layout2.pinCode.setOnPinEnteredListener {
             val code = it.subSequence(0, 6).toString()
             verifyPhoneNumberWithCode(verificationId, code)
-            findNavController().navigate(Verification1FragmentDirections.actionVerification1FragmentToUserProfileFragment())
         }
 
     }
@@ -84,7 +85,11 @@ class Verification1Fragment : Fragment() {
         }
 
         override fun onVerificationFailed(e: FirebaseException) {
-
+            Toast.makeText(
+                requireContext(),
+                "Invalid Phone Number",
+                Toast.LENGTH_LONG
+            ).show()
         }
 
         override fun onCodeSent(
@@ -96,8 +101,17 @@ class Verification1Fragment : Fragment() {
 
             // change layout
             binding.layout1.visibility = View.GONE
+            binding.layout2.guideEnterCode.text =
+                getString(R.string.title_guide_code, formatPhoneNumber)
             binding.layout2.layoutCode.visibility = View.VISIBLE
         }
+    }
+
+    private fun formatPhoneNumber(phoneNumber: String): String {
+        if (phoneNumber.length == 10) {
+            return phoneNumber.substring(1)
+        } else
+            return phoneNumber
     }
 
     private fun sendVerificationCode(phone: String) {
@@ -106,20 +120,6 @@ class Verification1Fragment : Fragment() {
             .setTimeout(60L, TimeUnit.SECONDS)
             .setActivity(requireActivity())
             .setCallbacks(mCallbacks)
-            .build()
-        PhoneAuthProvider.verifyPhoneNumber(options)
-    }
-
-    private fun resendVerificationCode(
-        phone: String,
-        token: PhoneAuthProvider.ForceResendingToken?
-    ) {
-        val options = PhoneAuthOptions.newBuilder(mAuth)
-            .setPhoneNumber(phone)
-            .setTimeout(60L, TimeUnit.SECONDS)
-            .setActivity(requireActivity())
-            .setCallbacks(mCallbacks)
-            .setForceResendingToken(token!!)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
@@ -137,9 +137,29 @@ class Verification1Fragment : Fragment() {
             .addOnSuccessListener {
                 //Login success
                 val phone = mAuth.currentUser?.phoneNumber
+                findNavController()
+                    .navigate(Verification1FragmentDirections.actionVerification1FragmentToUserProfileFragment())
             }
             .addOnFailureListener {
-
+                Toast.makeText(
+                    requireContext(),
+                    "Wrong code!!!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+    }
+
+    private fun resendVerificationCode(
+        phone: String,
+        token: PhoneAuthProvider.ForceResendingToken?
+    ) {
+        val options = PhoneAuthOptions.newBuilder(mAuth)
+            .setPhoneNumber(phone)
+            .setTimeout(60L, TimeUnit.SECONDS)
+            .setActivity(requireActivity())
+            .setCallbacks(mCallbacks)
+            .setForceResendingToken(token!!)
+            .build()
+        PhoneAuthProvider.verifyPhoneNumber(options)
     }
 }
