@@ -68,5 +68,7 @@ dependencies {
     // Browser
     implementation("androidx.browser:browser:1.4.0")
 
+    // fire store
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.3.0'
 
 }
