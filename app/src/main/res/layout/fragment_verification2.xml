@@ -4,7 +4,7 @@
     android:id="@+id/layout_code"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.verify2.Verification2Fragment">
+    tools:context=".ui.act_login.verify2.Verification2Fragment">
 
     <ImageView
         android:id="@+id/btn_back"

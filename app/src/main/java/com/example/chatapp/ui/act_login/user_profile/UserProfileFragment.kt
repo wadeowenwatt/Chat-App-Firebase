@@ -1,4 +1,4 @@
-package com.example.chatapp.ui.user_profile
+package com.example.chatapp.ui.act_login.user_profile
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.chatapp.ChatActivity
-import com.example.chatapp.R
+import com.example.chatapp.ui.act_chat.activity.ChatActivity
 import com.example.chatapp.databinding.FragmentUserProfileBinding
 import com.example.chatapp.domain.model.User
 import com.google.firebase.firestore.ktx.firestore
@@ -46,6 +45,7 @@ class UserProfileFragment : Fragment() {
                     val intent =
                         Intent(requireContext(), ChatActivity::class.java)
                     startActivity(intent)
+
                 }
                 .addOnFailureListener {
                     Toast.makeText(
@@ -55,6 +55,8 @@ class UserProfileFragment : Fragment() {
                     ).show()
                 }
         }
+
+        binding.avatarImage.setOnClickListener {  }
 
     }
 

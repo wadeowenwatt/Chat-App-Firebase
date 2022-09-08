@@ -1,4 +1,4 @@
-package com.example.chatapp.ui.verify2
+package com.example.chatapp.ui.act_login.verify2
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

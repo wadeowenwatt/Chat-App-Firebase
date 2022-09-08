@@ -1,4 +1,4 @@
-package com.example.chatapp.ui.verify1
+package com.example.chatapp.ui.act_login.verify1
 
 import android.os.Bundle
 import android.text.TextUtils

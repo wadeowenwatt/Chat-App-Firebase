@@ -1,4 +1,4 @@
-package com.example.chatapp.ui.walkthrough
+package com.example.chatapp.ui.act_login.walkthrough
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

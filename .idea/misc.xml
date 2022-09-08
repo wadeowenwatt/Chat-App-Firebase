@@ -6,10 +6,12 @@
         <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/drawable/btn_custom.xml" value="0.1765" />
         <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/activity_chat.xml" value="0.1" />
         <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/fragment_user_profile.xml" value="0.25" />
+        <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/fragment_contact.xml" value="0.25" />
+        <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/fragment_user_profile.xml" value="0.33" />
         <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/fragment_verification1.xml" value="0.25" />
         <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/fragment_verification2.xml" value="0.22" />
         <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/fragment_walkthrough.xml" value="0.2" />
+        <entry key="..\:/Android Kotlin/ChatApp/app/src/main/res/layout/item_user.xml" value="0.33" />
       </map>
     </option>
   </component>

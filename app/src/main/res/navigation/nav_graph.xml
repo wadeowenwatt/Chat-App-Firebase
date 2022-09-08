@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/walkthroughFragment"
-        android:name="com.example.chatapp.ui.walkthrough.WalkthroughFragment"
+        android:name="com.example.chatapp.ui.act_login.walkthrough.WalkthroughFragment"
         android:label="fragment_walkthrough"
         tools:layout="@layout/fragment_walkthrough">
         <action
@@ -17,12 +17,12 @@
     </fragment>
     <fragment
         android:id="@+id/userProfileFragment"
-        android:name="com.example.chatapp.ui.user_profile.UserProfileFragment"
+        android:name="com.example.chatapp.ui.act_login.user_profile.UserProfileFragment"
         android:label="fragment_user_profile"
         tools:layout="@layout/fragment_user_profile" />
     <fragment
         android:id="@+id/verification1Fragment"
-        android:name="com.example.chatapp.ui.verify1.Verification1Fragment"
+        android:name="com.example.chatapp.ui.act_login.verify1.Verification1Fragment"
         android:label="fragment_verification1"
         tools:layout="@layout/fragment_verification1">
         <action
