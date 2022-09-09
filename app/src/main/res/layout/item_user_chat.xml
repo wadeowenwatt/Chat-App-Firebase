@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginVertical="7dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/layout_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/avatar_user"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+
+                    tools:src="@tools:sample/avatars" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/status"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end"
+                android:elevation="3dp"
+                tools:src="@drawable/ic_status" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/mulish_semibold"
+                    android:gravity="top"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="Tran Linh" />
+
+                <TextView
+                    android:id="@+id/online_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/mulish_regular"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="5dp"
+                    android:textSize="14sp"
+                    tools:text="Today" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/review_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/mulish_regular"
+                    android:paddingTop="10dp"
+                    android:textSize="14sp"
+                    tools:text="Hello!" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="5dp"
+                    app:cardCornerRadius="40dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/background_semi_dark"
+                        android:fontFamily="@font/mulish_semibold"
+                        android:paddingHorizontal="7dp"
+                        android:textSize="14sp"
+                        tools:text="1" />
+
+                </androidx.cardview.widget.CardView>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

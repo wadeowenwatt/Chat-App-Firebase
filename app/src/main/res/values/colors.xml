@@ -10,4 +10,5 @@
     <color name="blue_default">#002DE3</color>
     <color name="semi_dark_background">#F7F7FC</color>
     <color name="semi_dark_text">#ADB5BD</color>
+    <color name="background_semi_dark">#BDC1EA</color>
 </resources>
