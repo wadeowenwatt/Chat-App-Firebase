@@ -15,4 +15,6 @@
     <string name="btn_save">Save</string>
     <string name="first_name_hint">First Name (Required)</string>
     <string name="last_name_hint">Last Name (Optional)</string>
+    <string name="account_title">Account</string>
+    <string name="chats_title">Chats</string>
 </resources>
