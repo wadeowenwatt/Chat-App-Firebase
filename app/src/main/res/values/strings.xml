@@ -17,4 +17,6 @@
     <string name="last_name_hint">Last Name (Optional)</string>
     <string name="account_title">Account</string>
     <string name="chats_title">Chats</string>
+    <string name="contact_bar_title">Contacts</string>
+    <string name="chats_bar_title">Chats</string>
 </resources>
