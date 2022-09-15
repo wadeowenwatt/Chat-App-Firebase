@@ -19,4 +19,7 @@
     <string name="chats_title">Chats</string>
     <string name="contact_bar_title">Contacts</string>
     <string name="chats_bar_title">Chats</string>
+    <string name="name_nav_bottom_1">Contacts</string>
+    <string name="name_nav_bottom_2">Chats</string>
+    <string name="name_nav_bottom_3">More</string>
 </resources>

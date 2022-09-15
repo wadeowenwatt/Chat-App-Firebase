@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/contactFragment"
+        android:icon="@drawable/nav_btn_contacts"
+        android:title="@string/name_nav_bottom_1" />
+
+    <item
+        android:id="@+id/chatsFragment"
+        android:icon="@drawable/nav_btn_chats"
+        android:title="@string/name_nav_bottom_2" />
+
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/nav_btn_more"
+        android:title="@string/name_nav_bottom_3" />
+
+</menu>

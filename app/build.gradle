@@ -62,8 +62,8 @@ dependencies {
     implementation ('com.alimuzaffar.lib:pinentryedittext:2.0.6')
 
     // Navigation Component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.1")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.1")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.2")
 
     // Browser
     implementation("androidx.browser:browser:1.4.0")
