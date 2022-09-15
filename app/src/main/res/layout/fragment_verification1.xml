@@ -90,7 +90,8 @@
                 android:hint="Phone Number"
                 android:inputType="phone"
                 android:paddingLeft="10dp"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
 

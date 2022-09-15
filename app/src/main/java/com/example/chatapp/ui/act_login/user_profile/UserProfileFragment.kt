@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.example.chatapp.ui.act_chat.activity.ChatActivity
 import com.example.chatapp.databinding.FragmentUserProfileBinding
 import com.example.chatapp.domain.model.User
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -39,8 +40,9 @@ class UserProfileFragment : Fragment() {
                 binding.lastName.text.toString()
             )
 
-            db.collection("/users")
-                .add(user)
+            val uid = Firebase.auth.uid
+
+            db.collection("/users").document(uid.toString()).set(user)
                 .addOnSuccessListener {
                     val intent =
                         Intent(requireContext(), ChatActivity::class.java)
