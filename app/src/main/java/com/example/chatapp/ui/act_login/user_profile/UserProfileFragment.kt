@@ -46,6 +46,7 @@ class UserProfileFragment : Fragment() {
                 .addOnSuccessListener {
                     val intent =
                         Intent(requireContext(), ChatActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     startActivity(intent)
 
                 }
@@ -58,7 +59,7 @@ class UserProfileFragment : Fragment() {
                 }
         }
 
-        binding.avatarImage.setOnClickListener {  }
+        binding.avatarImage.setOnClickListener { }
 
     }
 
