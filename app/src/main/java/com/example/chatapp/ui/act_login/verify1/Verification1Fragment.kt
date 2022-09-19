@@ -1,5 +1,6 @@
 package com.example.chatapp.ui.act_login.verify1
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -11,19 +12,22 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.chatapp.R
 import com.example.chatapp.databinding.FragmentVerification1Binding
+import com.example.chatapp.ui.act_chat.activity.ChatActivity
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import java.util.concurrent.TimeUnit
-
 
 class Verification1Fragment : Fragment() {
 
     private var _binding: FragmentVerification1Binding? = null
     private val binding get() = _binding!!
 
+    private val db = Firebase.firestore
 
     private var countryCode: String = "+"
     private var verificationId: String = ""
@@ -131,8 +135,24 @@ class Verification1Fragment : Fragment() {
             .addOnSuccessListener {
                 //Login success
                 val phone = mAuth.currentUser?.phoneNumber
-                findNavController()
-                    .navigate(Verification1FragmentDirections.actionVerification1FragmentToUserProfileFragment())
+
+                db.collection("/users")
+                    .whereEqualTo("id", mAuth.uid)
+                    .get()
+                    .addOnSuccessListener {
+                        val intent =
+                            Intent(requireContext(), ChatActivity::class.java)
+                        intent.addFlags(
+                            Intent.FLAG_ACTIVITY_NEW_TASK
+                                    or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        )
+                        startActivity(intent)
+                    }
+                    .addOnFailureListener {
+                        findNavController()
+                            .navigate(Verification1FragmentDirections.actionVerification1FragmentToUserProfileFragment())
+                    }
+
             }
             .addOnFailureListener {
                 Toast.makeText(

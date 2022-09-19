@@ -19,7 +19,7 @@ class UserProfileFragment : Fragment() {
     private var _binding: FragmentUserProfileBinding? = null
     private val binding get() = _binding!!
 
-    val db = Firebase.firestore
+    private val db = Firebase.firestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,19 +34,22 @@ class UserProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val uid = Firebase.auth.uid
+
         binding.btnSave.setOnClickListener {
             val user = User(
+                uid.toString(),
                 binding.firstName.text.toString(),
-                binding.lastName.text.toString()
+                binding.lastName.text.toString(),
+                arrayListOf("001")
             )
-
-            val uid = Firebase.auth.uid
 
             db.collection("/users").document(uid.toString()).set(user)
                 .addOnSuccessListener {
                     val intent =
                         Intent(requireContext(), ChatActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                            or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     startActivity(intent)
 
                 }

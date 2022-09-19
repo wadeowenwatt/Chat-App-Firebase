@@ -1,5 +1,8 @@
 package com.example.chatapp.domain.model
 
-import android.text.Editable
-
-data class User(var firstName: String, var lastName: String)
+data class User(
+    var id: String? = null,
+    var firstName: String? = null,
+    var lastName: String? = null,
+    var groupId: ArrayList<String>? = null
+)

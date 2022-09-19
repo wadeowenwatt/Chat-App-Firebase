@@ -28,10 +28,9 @@
                 app:cardCornerRadius="15dp">
 
                 <ImageView
-                    android:id="@+id/avatar_user"
+                    android:id="@+id/avatar_user_item"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-
                     tools:src="@tools:sample/avatars" />
 
             </androidx.cardview.widget.CardView>
@@ -42,7 +41,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="end"
                 android:elevation="3dp"
-                tools:src="@drawable/ic_status" />
+                android:src="@drawable/ic_status" />
 
         </FrameLayout>
 
@@ -52,7 +51,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/name_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Tran Linh"
