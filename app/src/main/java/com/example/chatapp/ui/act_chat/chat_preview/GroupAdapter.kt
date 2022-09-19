@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatapp.R
-import java.security.acl.Group
+import com.example.chatapp.domain.model.Group
 
 class GroupAdapter(private val listGroup: ArrayList<Group>): RecyclerView.Adapter<GroupAdapter.GroupItemViewHolder>() {
 
