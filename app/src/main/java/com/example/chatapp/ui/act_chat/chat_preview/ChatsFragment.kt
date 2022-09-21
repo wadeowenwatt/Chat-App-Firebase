@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.chatapp.R
 import com.example.chatapp.databinding.FragmentChatsBinding
 import com.example.chatapp.domain.model.Group
+import com.example.chatapp.domain.model.Message
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.toObject
 
@@ -20,7 +21,7 @@ class ChatsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var db: FirebaseFirestore
-    private lateinit var listGroup: ArrayList<Group>
+    private lateinit var listGroup: ArrayList<Message>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,7 +52,7 @@ class ChatsFragment : Fragment() {
 
                 for (dc: DocumentChange in value?.documentChanges!!) {
                     if (dc.type == DocumentChange.Type.ADDED) {
-                        listGroup.add(dc.document.toObject(Group::class.java))
+                        listGroup.add(dc.document.toObject(Message::class.java))
                     }
                 }
             }

@@ -8,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatapp.R
 import com.example.chatapp.domain.model.Group
+import com.example.chatapp.domain.model.Message
 
-class GroupAdapter(private val listGroup: ArrayList<Group>): RecyclerView.Adapter<GroupAdapter.GroupItemViewHolder>() {
+class GroupAdapter(private val listGroup: ArrayList<Message>): RecyclerView.Adapter<GroupAdapter.GroupItemViewHolder>() {
 
     class GroupItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val avatarImage : ImageView = itemView.findViewById(R.id.avatar_user_item_chat)
@@ -31,7 +32,7 @@ class GroupAdapter(private val listGroup: ArrayList<Group>): RecyclerView.Adapte
     override fun onBindViewHolder(holder: GroupItemViewHolder, position: Int) {
         val element = listGroup[position]
         holder.avatarImage.setImageResource(R.drawable.avatar)
-        holder.nameUser.text = "Test"
+        holder.nameUser.text = element.name
         holder.previewChat.text = "How are you?"
         holder.onlineTime.text = "Today"
         holder.unseenTime.text = "1"

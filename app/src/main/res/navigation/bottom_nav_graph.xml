@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_chats" />
     <fragment
         android:id="@+id/moreFragment"
-        android:name="com.example.chatapp.MoreFragment"
+        android:name="com.example.chatapp.ui.act_chat.more.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" />
 </navigation>
