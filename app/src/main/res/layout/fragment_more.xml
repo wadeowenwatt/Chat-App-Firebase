@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/avatar_image"
@@ -94,10 +94,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/icon_user"
@@ -137,10 +137,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/icon_chat"
@@ -180,10 +180,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/icon_appearance"
@@ -223,11 +223,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/icon_noti"
@@ -267,10 +265,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/icon_privacy"
@@ -310,10 +307,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/icon_data_usage"
@@ -352,17 +349,17 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginHorizontal="16dp"
-        android:background="@color/background_semi_dark" />
+        android:layout_height="1.5dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginVertical="4dp"
+        android:backgroundTint="@color/background_semi_dark" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/icon_help"
@@ -402,10 +399,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
+        android:paddingVertical="6dp">
 
         <ImageView
             android:id="@+id/icon_invite"

@@ -16,6 +16,21 @@ class ContactViewModel : ViewModel() {
 
     init {
         eventChangeListener()
+        getDataUser()
+    }
+
+    private fun getDataUser() {
+        db = FirebaseFirestore.getInstance()
+        db.collection("/users")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d("Show Data", "${document.id} => ${document.data}")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("Show Data", "Error getting documents: ", exception)
+            }
     }
 
     private fun eventChangeListener() {
