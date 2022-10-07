@@ -11,27 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.chatapp.R
 import com.example.chatapp.domain.model.User
 
-//class AllUserAdapter :
-//    ListAdapter<User, AllUserAdapter.AllUserViewHolder>(DiffCallBack) {
-class AllUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adapter<AllUserAdapter.AllUserViewHolder>() {
-//    companion object {
-//        private val DiffCallBack = object : DiffUtil.ItemCallback<User>() {
-//            override fun areItemsTheSame(
-//                oldItem: User,
-//                newItem: User
-//            ): Boolean {
-//                return oldItem === newItem
-//            }
-//
-//            override fun areContentsTheSame(
-//                oldItem: User,
-//                newItem: User
-//            ): Boolean {
-//                return oldItem.uid == newItem.uid
-//            }
-//
-//        }
-//    }
+
+//class AllUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adapter<AllUserAdapter.AllUserViewHolder>() {
+class AllUserAdapter :
+    ListAdapter<User, AllUserAdapter.AllUserViewHolder>(DiffCallBack) {
 
     class AllUserViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
@@ -51,12 +34,31 @@ class AllUserAdapter(private val listUser: ArrayList<User>) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: AllUserViewHolder, position: Int) {
-//        val element = getItem(position)
-        val element = listUser[position]
+        val element = getItem(position)
         holder.avatarImage.setImageResource(R.drawable.avatar)
         holder.nameUser.text = element.firstName + " " + element.lastName
         holder.statusString.text = "Online"
     }
 
-    override fun getItemCount(): Int = listUser.size
+    companion object {
+        private val DiffCallBack = object : DiffUtil.ItemCallback<User>() {
+            override fun areItemsTheSame(
+                oldItem: User,
+                newItem: User
+            ): Boolean {
+                return oldItem.uid === newItem.uid
+            }
+
+            override fun areContentsTheSame(
+                oldItem: User,
+                newItem: User
+            ): Boolean {
+                return oldItem.uid == newItem.uid
+                        && oldItem.firstName == newItem.firstName
+                        && oldItem.lastName == newItem.lastName
+            }
+
+        }
+    }
+
 }
